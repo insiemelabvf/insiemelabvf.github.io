@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oggettistica - Insieme Lab VF</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.jpeg" alt="Logo Insieme Lab VF" class="logo-img">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="su-di-noi.html">SU DI NOI</a></li>
+        <li><a href="vetrina.html" class="active">VETRINA</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- CONTENUTO PRINCIPALE -->
+  <main class="content-wrapper">
+    
+    <section class="welcome-section">
+      <h1>Scopri la sezione Oggettistica</h1>
+    </section>
+
+    <section class="products-grid">
+
+      <!-- 1° PRODOTTO -->
+      <div class="product-item" 
+           data-folder="oggettistica1" 
+           data-count="1" 
+           data-video="oggettistica1/video1.mp4"
+           data-title="Funghetto Porta Burrocacao"
+           data-desc="Contenitore per burrocacao: un ciondolo pensato per essere pratico ma ideale per personalizzare la tua borsa."
+           data-filato="Cotone"
+           data-lavorazione="Stelo con cappuccio mobile">
+        
+        <div class="product-card-frame" onclick="openProductGallery(this.parentElement)">
+          <img src="oggettistica1/foto1.jpeg" alt="Set Oggettistica" class="product-card-img" onerror="this.style.display='none'">
+          <div class="product-overlay">
+            <span>Guarda i dettagli</span>
+          </div>
+        </div>
+        <h3 class="product-name" onclick="openProductGallery(this.parentElement)">Funghetto Porta Burrocacao</h3>
+      </div>
+
+    </section>
+
+    <div class="back-link-container">
+      <a href="vetrina.html" class="back-link">← Torna a tutte le categorie</a>
+    </div>
+
+  </main>
+
+  <!-- POP-UP MODALE DINAMICO -->
+  <div id="product-modal" class="product-modal">
+    <div class="modal-backdrop" onclick="closeModal()"></div>
+    
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+
+      <div class="modal-body-layout">
+        
+        <div class="modal-gallery">
+          <div class="carousel-container" id="carousel-slides-box">
+            <button class="carousel-nav prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-nav next" onclick="changeSlide(1)">&#10095;</button>
+          </div>
+          <div class="carousel-dots" id="carousel-dots-box"></div>
+        </div>
+
+        <div class="modal-details">
+          <h2 class="modal-title" id="modal-title-target">Nome Prodotto</h2>
+
+          <div class="modal-description-box">
+            <h4>Descrizione:</h4>
+            <p id="modal-desc-target">Descrizione...</p>
+          </div>
+
+          <div class="modal-specs">
+            <div class="spec-row">
+              <strong>Filato:</strong> <span id="modal-filato-target">-</span>
+            </div>
+            <div class="spec-row">
+              <strong>Lavorazione:</strong> <span id="modal-lavorazione-target">-</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <p>Sito personale a scopo amatoriale e divulgativo. Non costituisce attività commerciale né vendita al dettaglio.</p>
+  </footer>
+
+  <!-- SCRIPT GALLERIA -->
+  <script>
+    let currentSlideIndex = 0;
+    let totalSlides = 0;
+
+    function openProductGallery(productEl) {
+      const folder = productEl.getAttribute('data-folder');
+      const count = parseInt(productEl.getAttribute('data-count'), 10) || 1;
+      const videoSrc = productEl.getAttribute('data-video');
+      
+      document.getElementById('modal-title-target').innerText = productEl.getAttribute('data-title') || 'Creazione Artigianale';
+      document.getElementById('modal-desc-target').innerText = productEl.getAttribute('data-desc') || '';
+      document.getElementById('modal-filato-target').innerText = productEl.getAttribute('data-filato') || '-';
+      document.getElementById('modal-lavorazione-target').innerText = productEl.getAttribute('data-lavorazione') || '-';
+
+      const slidesBox = document.getElementById('carousel-slides-box');
+      const dotsBox = document.getElementById('carousel-dots-box');
+
+      const oldSlides = slidesBox.querySelectorAll('.carousel-slide');
+      oldSlides.forEach(s => s.remove());
+      dotsBox.innerHTML = '';
+
+      let slideIndex = 0;
+
+      for (let i = 1; i <= count; i++) {
+        const slide = document.createElement('div');
+        slide.className = `carousel-slide ${slideIndex === 0 ? 'active' : ''}`;
+        slide.innerHTML = `<img src="${folder}/foto${i}.jpeg" alt="Foto ${i}">`;
+        slidesBox.appendChild(slide);
+
+        const currentIdx = slideIndex;
+        const dot = document.createElement('span');
+        dot.className = `dot ${currentIdx === 0 ? 'active' : ''}`;
+        dot.setAttribute('onclick', `goToSlide(${currentIdx})`);
+        dotsBox.appendChild(dot);
+
+        slideIndex++;
+      }
+
+      if (videoSrc && videoSrc.trim() !== '') {
+        const slideVideo = document.createElement('div');
+        slideVideo.className = `carousel-slide ${slideIndex === 0 ? 'active' : ''}`;
+        slideVideo.innerHTML = `
+          <video controls playsinline class="modal-video-player">
+            <source src="${videoSrc}" type="video/mp4">
+            Il tuo browser non supporta la riproduzione video.
+          </video>`;
+        slidesBox.appendChild(slideVideo);
+
+        const currentIdx = slideIndex;
+        const dot = document.createElement('span');
+        dot.className = `dot ${currentIdx === 0 ? 'active' : ''}`;
+        dot.setAttribute('onclick', `goToSlide(${currentIdx})`);
+        dotsBox.appendChild(dot);
+
+        slideIndex++;
+      }
+
+      totalSlides = slideIndex;
+      currentSlideIndex = 0;
+
+      const navBtns = slidesBox.querySelectorAll('.carousel-nav');
+      if (totalSlides <= 1) {
+        navBtns.forEach(b => b.style.display = 'none');
+        dotsBox.style.display = 'none';
+      } else {
+        navBtns.forEach(b => b.style.display = 'flex');
+        dotsBox.style.display = 'flex';
+      }
+
+      document.getElementById('product-modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.querySelectorAll('#carousel-slides-box video').forEach(v => v.pause());
+      document.getElementById('product-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function changeSlide(direction) {
+      goToSlide(currentSlideIndex + direction);
+    }
+
+    function goToSlide(targetIndex) {
+      document.querySelectorAll('#carousel-slides-box video').forEach(v => v.pause());
+
+      if (targetIndex >= totalSlides) targetIndex = 0;
+      if (targetIndex < 0) targetIndex = totalSlides - 1;
+
+      currentSlideIndex = targetIndex;
+
+      const slides = document.querySelectorAll('#carousel-slides-box .carousel-slide');
+      const dots = document.querySelectorAll('#carousel-dots-box .dot');
+
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === currentSlideIndex));
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === currentSlideIndex));
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+
+</body>
+</html>

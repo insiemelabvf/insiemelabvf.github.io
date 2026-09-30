@@ -1,0 +1,888 @@
+/* RESET E BASI */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #F6F3E1;
+  color: #556345;
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #97A97C;
+  font-weight: 700;
+}
+
+/* ===================================================
+   HEADER PC
+   =================================================== */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 6%;
+  min-height: 130px;
+  background-color: #F6F3E1;
+  border-bottom: 2px solid #97A97C;
+}
+
+.logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #97A97C;
+  padding: 12px 22px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: all 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #F6F3E1;
+  background-color: #97A97C;
+  box-shadow: 0 4px 12px rgba(151, 169, 124, 0.35);
+}
+
+/* CONTENITORE CENTRALE */
+.content-wrapper {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.welcome-section {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.welcome-section .pre-title {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  color: #97A97C;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.welcome-section h1 {
+  font-size: 2.2rem;
+  color: #97A97C;
+}
+
+/* HERO IMMAGINE PC */
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(151, 169, 124, 0.35);
+  box-shadow: 0 10px 30px rgba(151, 169, 124, 0.15);
+  margin-bottom: 3rem;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 14px 30px;
+  border: 2px solid #ffffff;
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #ffffff;
+  color: #556345;
+  text-shadow: none;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+/* FASCIA INFERIORE HOME PC */
+.story-and-social {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.story-text p {
+  font-size: 1.05rem;
+  color: #556345;
+  margin-bottom: 0.8rem;
+}
+
+.story-sub {
+  font-style: italic;
+  color: #97A97C !important;
+}
+
+.instagram-card {
+  background-color: #eef2e6;
+  border: 1px solid rgba(151, 169, 124, 0.45);
+  border-radius: 18px;
+  padding: 1.6rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 4px 14px rgba(151, 169, 124, 0.1);
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.insta-main-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #4b583c;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+.insta-pill-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background-color: #fbfbf6;
+  border: 1.5px solid rgba(151, 169, 124, 0.45);
+  border-radius: 30px;
+  padding: 10px 28px;
+  text-decoration: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+  width: 100%;
+  max-width: 290px;
+}
+
+.insta-pill-btn:hover {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: #97A97C;
+  box-shadow: 0 4px 14px rgba(151, 169, 124, 0.25);
+}
+
+.insta-icon-badge {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.insta-handle-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4b583c;
+  letter-spacing: 0.3px;
+}
+
+/* ===================================================
+   VETRINA PC (GRIGLIA 2x2)
+   =================================================== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.5rem 4rem;
+  max-width: 850px;
+  margin: 2rem auto 4rem auto;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.category-circle {
+  display: block;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50% !important;
+  border: 3px solid #97A97C !important;
+  outline: none !important;
+  background-color: #e5ecd9;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  text-decoration: none !important;
+  box-shadow: 0 8px 24px rgba(151, 169, 124, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.category-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.category-circle:hover {
+  border-color: #7b8e62 !important;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(151, 169, 124, 0.35);
+}
+
+.category-pill-btn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #556345 !important;
+  text-decoration: none !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 2px solid #97A97C !important;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(151, 169, 124, 0.18);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.category-pill-btn:hover {
+  background-color: #97A97C;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.category-desc {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #556345;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+/* ===================================================
+   SU DI NOI PC (STRUTTURA ORIGINALE CON TESTI A DESTRA/SINISTRA)
+   =================================================== */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  max-width: 950px;
+  margin: 1rem auto 4rem auto;
+}
+
+.about-card {
+  background-color: #eef2e6;
+  border: 1.5px solid rgba(151, 169, 124, 0.45);
+  border-radius: 24px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 6px 18px rgba(151, 169, 124, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(151, 169, 124, 0.18);
+}
+
+.about-card h2 {
+  font-size: 1.85rem;
+  color: #4b583c;
+  margin-bottom: 0.8rem;
+}
+
+.about-card p {
+  font-size: 1.05rem;
+  color: #556345;
+  line-height: 1.7;
+}
+
+/* BOX 1 & 3: Flex Orizzontale PC */
+.about-card-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+}
+
+.about-photo-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #97A97C;
+  background-color: #e5ecd9;
+  flex-shrink: 0;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(151, 169, 124, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.about-logo-standalone {
+  width: 280px;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: block;
+}
+
+.about-text-content {
+  flex-grow: 1;
+}
+
+/* Allineamento a destra originale per Box 1 e 3 */
+.about-text-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Allineamento a sinistra originale per Box 2 */
+.about-align-left {
+  text-align: left;
+}
+
+/* ===================================================
+   SCHEDE PRODOTTO PC (RAPPORTO 3:4 PIENO SENZA SFONDI)
+   =================================================== */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3.5rem 4rem;
+  max-width: 950px;
+  margin: 2rem auto 3rem auto;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  max-width: 390px;
+}
+
+.product-card-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 28px;
+  border: 3px solid #97A97C;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(151, 169, 124, 0.22);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.product-card-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(151, 169, 124, 0.35);
+  border-color: #7b8e62;
+}
+
+.product-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  border-radius: 25px;
+  transition: transform 0.4s ease;
+}
+
+.product-card-frame:hover .product-card-img {
+  transform: scale(1.03);
+}
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(151, 169, 124, 0.35);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card-frame:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-overlay span {
+  background-color: #ffffff;
+  color: #556345;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-name {
+  margin-top: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  color: #4b583c;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.product-name:hover {
+  color: #7b8e62;
+}
+
+.back-link-container {
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
+
+.back-link {
+  color: #7d9064;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(151, 169, 124, 0.4);
+  transition: all 0.25s ease;
+}
+
+.back-link:hover {
+  background-color: #97A97C;
+  color: #ffffff;
+}
+
+/* ===================================================
+   MODALE POP-UP PC
+   =================================================== */
+.product-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.product-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(60, 70, 50, 0.55);
+  backdrop-filter: blur(5px);
+}
+
+.modal-window {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 950px;
+  max-height: 88vh;
+  overflow-y: auto;
+  background-color: #F6F3E1;
+  border: 2px solid #97A97C;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
+
+.product-modal.open .modal-window {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2.2rem;
+  color: #556345;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close-btn:hover {
+  color: #97A97C;
+}
+
+.modal-body-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  max-height: 540px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #97A97C;
+  margin: 0 auto;
+}
+
+.carousel-slide {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.modal-video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #000000;
+  display: block;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.75);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  color: #556345;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.carousel-nav:hover {
+  background: #ffffff;
+  color: #97A97C;
+}
+
+.carousel-nav.prev { left: 10px; }
+.carousel-nav.next { right: 10px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(151, 169, 124, 0.4);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-dots .dot.active {
+  background-color: #97A97C;
+  transform: scale(1.25);
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: #4b583c;
+  margin: 0.4rem 0 1.2rem 0;
+}
+
+.modal-description-box {
+  background-color: #eef2e6;
+  border: 1px solid rgba(151, 169, 124, 0.35);
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-description-box h4 {
+  font-size: 0.95rem;
+  color: #4b583c;
+  margin-bottom: 0.5rem;
+}
+
+.modal-description-box p {
+  font-size: 0.95rem;
+  color: #556345;
+  line-height: 1.6;
+}
+
+.modal-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.spec-row {
+  font-size: 0.9rem;
+  color: #556345;
+  border-bottom: 1px dashed rgba(151, 169, 124, 0.3);
+  padding-bottom: 0.4rem;
+}
+
+.spec-row strong {
+  color: #4b583c;
+  margin-right: 6px;
+}
+
+/* FOOTER */
+.main-footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  margin-top: 3.5rem;
+  border-top: 1px solid rgba(151, 169, 124, 0.35);
+  font-size: 0.85rem;
+  color: #97A97C;
+}
+
+/* ==========================================================================
+   SOLO ED ESCLUSIVAMENTE PER SMARTPHONE (SOTTO I 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  /* HEADER & MENU MOBILE */
+  .main-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0.8rem;
+    gap: 0.8rem;
+    min-height: auto;
+  }
+
+  .logo-img {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+  }
+
+  .main-nav ul {
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 6px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .main-nav a {
+    font-size: 0.82rem;
+    padding: 8px 12px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+
+  /* HOME HERO & TESTI MOBILE */
+  .content-wrapper {
+    margin: 1.5rem auto;
+    padding: 0 1.2rem;
+  }
+
+  .welcome-section h1 {
+    font-size: 1.7rem;
+    line-height: 1.35;
+  }
+
+  .hero-image-container {
+    height: 420px;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-btn {
+    bottom: 20px;
+    font-size: 0.85rem;
+    padding: 10px 20px;
+    letter-spacing: 0.5px;
+    border-width: 1.5px;
+    border-radius: 25px;
+  }
+
+  .story-and-social {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+    text-align: center;
+  }
+
+  .story-text {
+    text-align: center;
+  }
+
+  .story-text p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .instagram-card {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 330px;
+    padding: 1.2rem 1.4rem;
+    gap: 0.8rem;
+  }
+
+  .insta-main-title {
+    font-size: 1.4rem;
+  }
+
+  .insta-pill-btn {
+    padding: 8px 20px;
+    max-width: 260px;
+  }
+
+  /* VETRINA MOBILE: 1 COLONNA */
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin: 1.5rem auto 3rem auto;
+  }
+
+  /* SU DI NOI MOBILE: INCOLONNATO SOLO SUL CELLULARE */
+  .about-card {
+    padding: 2rem 1.4rem;
+    text-align: center;
+  }
+
+  .about-card-flex {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .about-photo-circle {
+    margin: 0 auto;
+  }
+
+  .about-logo-standalone {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .about-text-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-text-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-align-left {
+    text-align: center;
+  }
+
+  /* PRODOTTI & MODALE MOBILE */
+  .products-grid {
+    gap: 2.5rem;
+  }
+
+  .product-item {
+    max-width: 330px;
+    margin: 0 auto;
+  }
+
+  .modal-window {
+    width: 94%;
+    padding: 2.2rem 1.2rem 1.5rem 1.2rem;
+  }
+
+  .modal-body-layout {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+    text-align: center;
+  }
+
+  .modal-specs {
+    align-items: center;
+  }
+
+  .spec-row {
+    width: 100%;
+    text-align: center;
+  }
+}
