@@ -899,3 +899,143 @@ h1, h2, h3 {
     text-align: center;
   }
 }
+
+
+/* ===================================================
+   TEMA OCCASIONI / NATALE (Rosso Pastello + Verdone + Oro)
+   =================================================== */
+
+body.theme-occasioni {
+  background: linear-gradient(180deg, #FDF7F5 0%, #F9ECE8 100%);
+  color: #234330;
+}
+
+body.theme-occasioni .main-header {
+  background-color: transparent;
+  border-bottom: 2px solid #234330;
+}
+
+body.theme-occasioni .main-nav a {
+  color: #234330;
+}
+
+body.theme-occasioni .main-nav a:hover,
+body.theme-occasioni .main-nav a.active {
+  background-color: #234330;
+  color: #FDF7F5;
+  box-shadow: 0 4px 12px rgba(35, 67, 48, 0.25);
+}
+
+body.theme-occasioni .welcome-section .pre-title {
+  color: #C19A5B;
+  letter-spacing: 2px;
+}
+
+body.theme-occasioni .welcome-section h1 {
+  color: #234330;
+}
+
+/* Filtri pillola festività */
+.festivity-filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 1.5rem auto 3rem auto;
+}
+
+.festivity-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: 1.5px solid #234330;
+  color: #234330;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(35, 67, 48, 0.08);
+}
+
+.festivity-tag.active {
+  background-color: #234330;
+  color: #FDF7F5;
+  border-color: #C19A5B;
+  box-shadow: 0 4px 14px rgba(35, 67, 48, 0.25);
+}
+
+.festivity-tag.upcoming {
+  opacity: 0.5;
+  border-style: dashed;
+  cursor: default;
+}
+
+/* Schede prodotto Occasioni */
+body.theme-occasioni .product-card-frame {
+  border: 3px solid #234330;
+  box-shadow: 0 10px 26px rgba(35, 67, 48, 0.15);
+}
+
+body.theme-occasioni .product-card-frame:hover {
+  border-color: #C19A5B;
+  box-shadow: 0 16px 36px rgba(193, 154, 91, 0.3);
+}
+
+body.theme-occasioni .product-overlay {
+  background: rgba(35, 67, 48, 0.35);
+}
+
+body.theme-occasioni .product-overlay span {
+  border: 1px solid #C19A5B;
+  color: #234330;
+}
+
+body.theme-occasioni .product-name {
+  color: #234330;
+}
+
+body.theme-occasioni .product-name:hover {
+  color: #C19A5B;
+}
+
+body.theme-occasioni .back-link {
+  color: #234330;
+  border-color: rgba(35, 67, 48, 0.4);
+}
+
+body.theme-occasioni .back-link:hover {
+  background-color: #234330;
+  color: #FDF7F5;
+}
+
+/* Modale pop-up Occasioni */
+body.theme-occasioni .modal-window {
+  background-color: #FDF7F5;
+  border-color: #234330;
+}
+
+body.theme-occasioni .modal-title {
+  color: #234330;
+}
+
+body.theme-occasioni .modal-description-box {
+  background-color: #F4E4DF;
+  border-color: rgba(35, 67, 48, 0.25);
+}
+
+body.theme-occasioni .modal-description-box h4 {
+  color: #234330;
+}
+
+body.theme-occasioni .carousel-container {
+  border-color: #234330;
+}
+
+body.theme-occasioni .carousel-dots .dot.active {
+  background-color: #234330;
+}
+
+body.theme-occasioni .main-footer {
+  border-top-color: rgba(35, 67, 48, 0.25);
+  color: #234330;
+}
